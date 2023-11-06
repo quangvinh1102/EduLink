@@ -22,6 +22,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/university/info', [LoginController::class, 'getUniversity']);
 Route::post('/user/create', [LoginController::class, 'register']);
 Route::post('/user/login', [LoginController::class, 'login']);
-Route::middleware(['auth'])->group(function () {
-});
-Route::get('/user/infor', [LoginController::class, 'getUser']);
+Route::get('getUserInfor', [LoginController::class,'currentUserLogin']);

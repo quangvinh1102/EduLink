@@ -31,17 +31,15 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             Auth::login(Auth::user());
-            dd(Auth::check());
             return response()->json(['message' => 'Đăng nhập thành công'], 200);
         }
     
         return response()->json(['message' => 'Đăng nhập thất bại'], 401);
     }
 
-    public function getUser(Request $request) {
-        dd(Auth::user());
+    public function currentUserLogin() {
         if (Auth::check()) {
-            $user = Auth::user(); 
+            $user = 123; 
             return response()->json(['user' => $user]);
         } else {
             return response()->json(['message' => 'Người dùng chưa đăng nhập'], 401);

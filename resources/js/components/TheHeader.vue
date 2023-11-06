@@ -59,15 +59,17 @@ import axios from 'axios'
 export default {
     setup() {
         const getUserInfo = () => {
-            axios.get('api/user/infor')
+            axios.get('api/user123/infor123')
                 .then((response) => {
                     console.log(response);
+                })
+                .catch((error) => {
+                    console.error(error);
                 })
         }
         getUserInfo()
 
         return {
-            getUserInfo,
         }
     }
 }
