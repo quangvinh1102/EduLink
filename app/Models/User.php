@@ -71,9 +71,9 @@ class User extends Authenticatable
     }
 
     // Quan hệ một-đến-nhiều với bảng chat messages
-    public function chatMessages()
+    public function chat()
     {
-        return $this->hasMany(ChatMessages::class, 'user_id', 'id');
+        return $this->hasMany(Chat::class, 'user_id', 'id');
     }
 
     // Quan hệ một-đến-nhiều với bảng chat comments

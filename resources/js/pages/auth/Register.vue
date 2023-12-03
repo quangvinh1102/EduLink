@@ -142,7 +142,7 @@ export default {
                         })
                         errors.value = '';
                         message.success("Đăng ký thành công");
-                        router.push({ path: "/login" });
+                        router.push({ name: 'login' });
                     }
                 })
                 .catch((error) => {

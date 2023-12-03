@@ -20,7 +20,7 @@ class UniversitySeeder extends Seeder
         University::create([
             'name' => 'Đại Học Tài Nguyên và Môi Trường',
             'description' => 'Description of University 1',
-            'avatar' => '', // Để trống theo yêu cầu của bạn
+            'avatar' => '', 
             'location' => '41A Phú Diễn',
         ]);
 

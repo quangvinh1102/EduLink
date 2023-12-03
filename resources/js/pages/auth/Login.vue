@@ -96,12 +96,15 @@ export default {
       console.log(user);
       axios.post('api/user/login', user)
         .then((response) => {
-          console.log(response);
+          console.log(response.data.token);
+          localStorage.setItem('user_token', response.data.token);
           if (response.status == 200) {
             router.push({ name: 'home' });
-          }else {
-            message.error("Đăng Nhập Thất Bại")
           }
+        })
+        .catch((error) => {
+          console.log(error);
+          message.error("Tài khoản hoặc mật khẩu không chính xác")
         })
     }
 

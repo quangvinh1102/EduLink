@@ -14,8 +14,8 @@ class Articles extends Model
 
     protected $fillable = [
         'user_id',
-        'title',
         'content',
+        'img'
     ];
 
     // Quan hệ nhiều-đến-một với bảng Universities

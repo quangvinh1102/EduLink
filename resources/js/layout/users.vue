@@ -1,12 +1,12 @@
 <template>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12 position-fixed" style="z-index: 1;">
+        <div class="col-12 position-fixed" style="z-index: 1; background: aliceblue;">
           <TheHeader />
         </div>
         <div class="col-12">
           <div class="row">
-            <div class="col-3 d-none d-md-flex position-fixed mt-5" style="z-index: 1;">
+            <div class="col-3 d-none d-lg-flex position-fixed mt-5" style="z-index: 1;">
               <TheMenu />
             </div>
             <div class="col">

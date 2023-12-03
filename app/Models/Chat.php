@@ -5,16 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ChatMessages extends Model
+class Chat extends Model
 {
     use HasFactory;
 
-    protected $table = 'chat_messages';
+    protected $table = 'chat';
     public $timestamp = true;
 
     protected $fillable = [
+        'id_chat',
         'user_id',
-        'content',
+        'created_at',
+        'updated_at'
     ];
 
     // Quan hệ nhiều-đến-một với bảng User

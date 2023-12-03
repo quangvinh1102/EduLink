@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ChatController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +24,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/university/info', [LoginController::class, 'getUniversity']);
 Route::post('/user/create', [LoginController::class, 'register']);
 Route::post('/user/login', [LoginController::class, 'login']);
-Route::get('getUserInfor', [LoginController::class,'currentUserLogin']);
+Route::middleware(['auth:sanctum', 'auth:web'])->group(function () {
+    Route::get('/user/getUserInfor', [LoginController::class, 'inforUser']);
+    Route::get('/user/logout', [LoginController::class, 'logout']);
+    Route::put('/user/editProfile/{id}', [LoginController::class, 'updateUser']);
+    
+    Route::post('/article/create', [ArticleController::class,'store']);
+    Route::get('/article/index', [ArticleController::class,'index']);
+    Route::delete('/article/{id}', [ArticleController::class,'delete']);
+    Route::get('/article/{id}/edit', [ArticleController::class,'edit']);
+    Route::put('/article/{id}', [ArticleController::class,'update']);
+    
+    Route::put('/chat/create', [ChatController::class, 'create']);
+});
+Route::get('/user/listchat/{id}', [LoginController::class, 'getAllUsers']);
